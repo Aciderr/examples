@@ -1,25 +1,22 @@
 {
-  "name": "nx-github-actions-to-aws",
+  "name": "frontend",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "nx-github-actions-to-aws",
-  "sourceRoot": "apps/nx-github-actions-to-aws/src",
+  "sourceRoot": "apps/frontend/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/nx-github-actions-to-aws",
-        "index": "apps/nx-github-actions-to-aws/src/index.html",
-        "main": "apps/nx-github-actions-to-aws/src/main.ts",
+        "outputPath": "dist/apps/frontend",
+        "index": "apps/frontend/src/index.html",
+        "main": "apps/frontend/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/nx-github-actions-to-aws/tsconfig.app.json",
-        "assets": [
-          "apps/nx-github-actions-to-aws/src/favicon.ico",
-          "apps/nx-github-actions-to-aws/src/assets"
-        ],
-        "styles": ["apps/nx-github-actions-to-aws/src/styles.scss"],
+        "tsConfig": "apps/frontend/tsconfig.app.json",
+        "assets": ["apps/frontend/src/favicon.ico", "apps/frontend/src/assets"],
+        "styles": ["apps/frontend/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -53,10 +50,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "nx-github-actions-to-aws:build:production"
+          "browserTarget": "frontend:build:production"
         },
         "development": {
-          "browserTarget": "nx-github-actions-to-aws:build:development"
+          "browserTarget": "frontend:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -64,24 +61,21 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "nx-github-actions-to-aws:build"
+        "browserTarget": "frontend:build"
       }
     },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/nx-github-actions-to-aws/**/*.ts",
-          "apps/nx-github-actions-to-aws/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/frontend/**/*.ts", "apps/frontend/**/*.html"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/nx-github-actions-to-aws/jest.config.ts",
+        "jestConfig": "apps/frontend/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
