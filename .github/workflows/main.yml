@@ -1,0 +1,31 @@
+name: Deploy frontend and backend
+on: [push, workflow_dispatch]
+jobs:
+  Deploy-Affected-Apps:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+    steps:
+      - name: Install Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install AWS CLI
+        run: |
+          python -m pip install --upgrade pip
+          pip install awsebcli --upgrade --user
+          eb --version
+      - name: Fetch GIT history
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+          fetch-depth: 0
+      - run: git fetch --no-tags --prune --depth=5 origin main
+      - name: Set base and head SHAs required for affected command
+      - uses: nrwl/nx-set-shas@v3
+      - name: Install dependencies
+      - run: npm ci
+      - name: Run build and deploy targets for effected apps
+      - run: npx nx affected -t=build,deploy
