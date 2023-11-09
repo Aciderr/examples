@@ -62,7 +62,13 @@
     "deploy": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cp -R apps/backend/.elasticbeanstalk dist/apps/backend/.elasticbeanstalk && cd dist/apps/backend && mv main.js app.js && eb deploy"
+        "commands": [
+          "cp -R apps/backend/.elasticbeanstalk dist/apps/backend/.elasticbeanstalk",
+          "cd dist/apps/backend",
+          "mv main.js app.js",
+          "eb deploy"
+        ],
+        "parallel": false
       }
     }
   },
