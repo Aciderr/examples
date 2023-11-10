@@ -89,8 +89,8 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "aws s3 sync dist/apps/frontend s3://foodrecipies --region eu-central-1 --delete",
-          "aws cloudfront create-invalidation --distribution-id E3631NNDDBR5II --paths \"/*\""
+          "aws s3 sync dist/apps/frontend s3://your-bucket-name --region your-region --delete",
+          "aws cloudfront create-invalidation --distribution-id your-distribution-id --paths \"/*\""
         ],
         "parallel": false
       }
