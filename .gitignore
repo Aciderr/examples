@@ -40,3 +40,7 @@ Thumbs.db
 
 .nx/cache
 .angular
+
+apps/frontend-authentication/environment.ts
+
+apps/backend-authentication/environment.json
