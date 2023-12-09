@@ -42,5 +42,4 @@ Thumbs.db
 .angular
 
 apps/frontend-authentication/environment.ts
-
-apps/backend-authentication/environment.json
+apps/backend-authentication/environment.ts
