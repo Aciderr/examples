@@ -19,13 +19,6 @@ export class AppComponent {
   }
 
   onLoginButtonClock(): void {
-    console.log('auth', this.auth.config);
-      signInWithPopup(this.auth, new GoogleAuthProvider())
-      .then(() => {
-        console.log('You have been successfully logged in!');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      signInWithPopup(this.auth, new GoogleAuthProvider()).then();
   }
 }
