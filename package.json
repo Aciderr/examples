@@ -2,7 +2,9 @@
   "name": "@nx-github-actions-to-aws/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "node main.js"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "17.0.0",
