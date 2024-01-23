@@ -64,6 +64,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
+          "cp -R apps/backend/.ebignore dist/apps/backend/.ebignore",
           "cp -R apps/backend/.elasticbeanstalk dist/apps/backend/.elasticbeanstalk",
           "cd dist/apps/backend && eb deploy --staged",
           "cd dist/apps/backend && ls -a"
