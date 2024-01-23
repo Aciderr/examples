@@ -67,7 +67,7 @@
           "cd dist/apps/backend && mv main.js app.js && ls -a",
           "cd dist/apps/backend && eb deploy"
         ],
-        "parallel": false
+        "parallel": true
       }
     }
   },
