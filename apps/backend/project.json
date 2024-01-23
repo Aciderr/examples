@@ -9,6 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
+        "generatePackageJson": true,
         "target": "node",
         "compiler": "tsc",
         "outputPath": "dist/apps/backend",
@@ -64,7 +65,6 @@
       "options": {
         "commands": [
           "cp -R apps/backend/.elasticbeanstalk dist/apps/backend/.elasticbeanstalk",
-          "cd dist/apps/backend && mv main.js app.js && ls -a",
           "cd dist/apps/backend && eb deploy"
         ],
         "parallel": true
