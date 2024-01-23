@@ -64,7 +64,7 @@
       "options": {
         "commands": [
           "cp -R apps/backend/.elasticbeanstalk dist/apps/backend/.elasticbeanstalk",
-          "cd dist/apps/backend && mv main.js app.js",
+          "cd dist/apps/backend && mv main.js app.js && ls -a",
           "eb deploy"
         ],
         "parallel": false
