@@ -63,9 +63,9 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "ls -a",
           "cp -R apps/backend/.elasticbeanstalk dist/apps/backend/.elasticbeanstalk",
           "cd dist/apps/backend",
+          "ls -a",
           "mv main.js app.js",
           "eb deploy"
         ],
