@@ -65,7 +65,8 @@
       "options": {
         "commands": [
           "cp -R apps/backend/.elasticbeanstalk dist/apps/backend/.elasticbeanstalk",
-          "cd dist/apps/backend && eb deploy"
+          "cd dist/apps/backend && eb deploy",
+          "ls -a"
         ],
         "parallel": true
       }
